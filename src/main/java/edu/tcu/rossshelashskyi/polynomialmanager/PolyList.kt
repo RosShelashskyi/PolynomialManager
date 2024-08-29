@@ -28,7 +28,7 @@ class PolyList(val polyList: MutableList<Polynomial>) {
     fun search(name: String): Int{
         polyList.forEach{
             if(name == it.name){
-                polyPrint()
+                polyPrint(it)
                 return 1
             }
         }
@@ -36,7 +36,44 @@ class PolyList(val polyList: MutableList<Polynomial>) {
         return 0
     }
 
-    private fun polyPrint(){
-
+    private fun polyPrint(poly: Polynomial){
+        val s: StringBuilder = StringBuilder()
+        s.append("${poly.name} = ")
+        //append each term to the string
+        for (term in poly.terms) {
+            //append coefficient
+            if (term.coef < 0) {
+                s.append(term.coef)
+            } else {
+                if (poly.terms.indexOf(term) != 0) {
+                    s.append(" + ")
+                }
+                s.append(term.coef)
+            }
+            //append x
+            if(term.a != 0){
+                if(term.a == 1){
+                    s.append("(x)")
+                }else{
+                    s.append("(x^${term.a})")
+                }
+            }
+            //append y
+            if(term.b != 0){
+                if(term.b == 1){
+                    s.append("(y)")
+                }else{
+                    s.append("(y^${term.b})")
+                }
+            }
+            //append z
+            if(term.c != 0){
+                if(term.c == 1){
+                    s.append("(z)")
+                }else{
+                    s.append("(z^${term.c})")
+                }
+            }
+        }
     }
 }
