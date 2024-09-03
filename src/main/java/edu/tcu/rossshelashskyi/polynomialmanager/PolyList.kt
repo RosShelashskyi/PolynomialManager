@@ -6,11 +6,11 @@ class PolyList(val polyList: MutableList<Polynomial>) {
         polyList.forEach{
             if(poly.name == it.name){
                 println("POLYNOMIAL ${it.name} ALREADY INSERTED")
-                return 0
+                return 1
             }
         }
         polyList.add(poly)
-        return 1
+        return 0
     }
 
     fun delete(name: String): Int{
@@ -18,7 +18,7 @@ class PolyList(val polyList: MutableList<Polynomial>) {
             if(name == it.name){
                 polyList.remove(it)
                 println("POLYNOMIAL $name SUCCESSFULLY DELETED")
-                return 1
+                return 0
             }
         }
         println("POLYNOMIAL $name DOES NOT EXIST")
@@ -29,11 +29,11 @@ class PolyList(val polyList: MutableList<Polynomial>) {
         polyList.forEach{
             if(name == it.name){
                 polyPrint(it)
-                return 1
+                return 0
             }
         }
         println("POLYNOMIAL $name DOES NOT EXIST")
-        return 0
+        return 1
     }
 
     private fun polyPrint(poly: Polynomial){

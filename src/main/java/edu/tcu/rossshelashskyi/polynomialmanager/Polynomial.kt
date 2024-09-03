@@ -1,3 +1,3 @@
 package edu.tcu.rossshelashskyi.polynomialmanager
 
-class Polynomial(var name: String, var terms: List<Term>)
+class Polynomial(var name: String, var terms: MutableList<Term>)
