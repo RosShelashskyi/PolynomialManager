@@ -75,5 +75,6 @@ class PolyList(val polyList: MutableList<Polynomial>) {
                 }
             }
         }
+        println(s)
     }
 }
