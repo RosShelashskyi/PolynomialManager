@@ -1,22 +1,21 @@
 package edu.tcu.rossshelashskyi.polynomialmanager;
 
-class PolyManager {
-    fun main(){
-        while(true){
-            val command = readlnOrNull()
 
-            val args: List<String>? = command?.split(" ")
+fun main(){
+    while(true){
+        val command = readlnOrNull()
 
-            if (args != null) {
-                if(args[0] == "INSERT"){
+        val args: List<String>? = command?.split(" ")
 
-                }else if(args[0] == "DELETE"){
+        if (args != null) {
+            if(args[0] == "INSERT"){
 
-                }else if(args[0] == "SEARCH"){
+            }else if(args[0] == "DELETE"){
 
-                }else if(args[0] == "QUIT") {
-                    return
-                }
+            }else if(args[0] == "SEARCH"){
+
+            }else if(args[0] == "QUIT") {
+                return
             }
         }
     }
