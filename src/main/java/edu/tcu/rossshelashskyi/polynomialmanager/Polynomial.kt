@@ -6,7 +6,7 @@ class Polynomial(val name: String){
     fun addTerm(term: Term){
         terms.add(term)
     }
-~
+
     fun getTermSize(): Int{
         return terms.size
     }

@@ -1,12 +1,12 @@
 package edu.tcu.rossshelashskyi.polynomialmanager;
 
 fun main(){
+    val polyList = PolyList()
     while(true){
         val command = readlnOrNull()
 
         val args: List<String>? = command?.split(" ")
 
-        val polyList = PolyList()
         if (args != null) {
             //check which command is entered
             if(args[0] == "INSERT"){

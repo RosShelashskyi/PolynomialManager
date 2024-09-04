@@ -7,11 +7,12 @@ class PolyList{
         polyList.forEach{
             if(poly.name == it.name){
                 println("POLYNOMIAL ${it.name} ALREADY INSERTED")
-                return 1
+                return 0
             }
         }
         polyList.add(poly)
-        return 0
+        polyPrint(poly)
+        return 1
     }
 
     fun delete(name: String): Int{
@@ -19,29 +20,29 @@ class PolyList{
             if(name == it.name){
                 polyList.remove(it)
                 println("POLYNOMIAL $name SUCCESSFULLY DELETED")
-                return 0
+                return 1
             }
         }
         println("POLYNOMIAL $name DOES NOT EXIST")
-        return 1
+        return 0
     }
 
     fun search(name: String): Int{
         polyList.forEach{
             if(name == it.name){
                 polyPrint(it)
-                return 0
+                return 1
             }
         }
         println("POLYNOMIAL $name DOES NOT EXIST")
-        return 1
+        return 0
     }
 
     private fun polyPrint(poly: Polynomial){
         val s: StringBuilder = StringBuilder()
         s.append("${poly.name} = ")
         //append each term to the string
-        for (i in 0..poly.getTermSize()) {
+        for (i in 0..<poly.getTermSize()) {
             val term = poly.getTermAt(i)
             //append coefficient
             if (term.coef < 0) {
