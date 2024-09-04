@@ -46,7 +46,7 @@ class PolyList{
             val term = poly.getTermAt(i)
             //append coefficient
             if (term.coef < 0) {
-                s.append(term.coef)
+                s.append(" - ${term.coef * -1}")
             } else {
                 if (i != 0) {
                     s.append(" + ")
