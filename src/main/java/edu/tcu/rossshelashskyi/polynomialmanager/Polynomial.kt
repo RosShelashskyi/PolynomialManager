@@ -1,3 +1,17 @@
 package edu.tcu.rossshelashskyi.polynomialmanager
 
-class Polynomial(var name: String, var terms: MutableList<Term>)
+class Polynomial(val name: String){
+    private val terms: MutableList<Term> = arrayListOf()
+
+    fun addTerm(term: Term){
+        terms.add(term)
+    }
+~
+    fun getTermSize(): Int{
+        return terms.size
+    }
+
+    fun getTermAt(index: Int): Term{
+        return terms[index]
+    }
+}

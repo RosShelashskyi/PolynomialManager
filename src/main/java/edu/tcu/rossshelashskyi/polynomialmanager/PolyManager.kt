@@ -6,16 +6,12 @@ fun main(){
 
         val args: List<String>? = command?.split(" ")
 
-        val list: MutableList<Polynomial> = arrayListOf()
-
-        val polyList = PolyList(list)
+        val polyList = PolyList()
         if (args != null) {
             //check which command is entered
             if(args[0] == "INSERT"){
-                //set up the term list
-                val termList: MutableList<Term> = arrayListOf()
-                //set up the polynomial object with the name and termList as parameters
-                val polynomial = Polynomial(args[1], termList)
+                //set up the polynomial object
+                val polynomial = Polynomial(args[1])
                 //iterate over the terms in the input
                 var i = 2
                 while(i < args.size){
@@ -24,7 +20,7 @@ fun main(){
                     //create a term object with coefficient and exponents from the input string
                     val term = Term(termStr[0].toInt(), termStr[1].toInt(), termStr[2].toInt(), termStr[3].toInt())
                     //add term to the polynomial
-                    polynomial.terms.add(term)
+                    polynomial.addTerm(term)
                     i++
                 }
                 //add the polynomial to polyList

@@ -1,6 +1,7 @@
 package edu.tcu.rossshelashskyi.polynomialmanager
 
-class PolyList(val polyList: MutableList<Polynomial>) {
+class PolyList{
+    private val polyList: MutableList<Polynomial> = arrayListOf()
 
     fun insert(poly: Polynomial): Int{
         polyList.forEach{
@@ -40,12 +41,13 @@ class PolyList(val polyList: MutableList<Polynomial>) {
         val s: StringBuilder = StringBuilder()
         s.append("${poly.name} = ")
         //append each term to the string
-        for (term in poly.terms) {
+        for (i in 0..poly.getTermSize()) {
+            val term = poly.getTermAt(i)
             //append coefficient
             if (term.coef < 0) {
                 s.append(term.coef)
             } else {
-                if (poly.terms.indexOf(term) != 0) {
+                if (i != 0) {
                     s.append(" + ")
                 }
                 s.append(term.coef)
